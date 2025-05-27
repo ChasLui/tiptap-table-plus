@@ -1,45 +1,53 @@
-
 # Tiptap Table Plus
+
 [![NPM](https://img.shields.io/npm/v/tiptap-table-plus.svg)](https://www.npmjs.com/package/tiptap-table-plus)
 
-`tiptap-table-plus` is an npm package that extends the table functionality of the Tiptap editor by adding two new commands: `duplicateColumn` and `duplicateRow`.
+`tiptap-table-plus` 是一个 npm 包，通过新增两个命令：`duplicateColumn` 和 `duplicateRow`，扩展了 Tiptap 编辑器的表格功能。
 
-## Installation
+## 安装
 
-To install the package, use npm:
+使用 npm 安装该包：
 
 ```bash
 npm install tiptap-table-plus
 ```
 
-# Commands
-## `duplicateColumn`
+## 命令
 
-This command duplicates the current column. By default, it copies the content of the column as well.
+### `duplicateColumn`
 
-### Usage
+此命令会复制当前列。默认情况下，会连同内容一起复制。
+
+用法
+
 ```js
 editor.commands.duplicateColumn(true);
 ```
 
-### Parameters
-- `withContent` (boolean): 
-- If true, the content of the column will be copied. If false, only the structure will be duplicated. Default is true.
+参数
 
-## `duplicateRow`
+- `withContent` (boolean)：
+- 如果为 true，将会复制列的内容。如果为 false，只复制结构，不复制内容。默认值为 true。
 
-This command duplicates the current row. By default, it copies the content of the row as well.
-### Usage
+### `duplicateRow`
+
+此命令会复制当前行。默认情况下，会连同内容一起复制。
+
+用法
+
 ```js
 editor.commands.duplicateRow(true);
 ```
 
-### Parameters
-- `withContent` (boolean): 
-- If true, the content of the row will be copied. If false, only the structure will be duplicated. Default is true.
+参数
 
-# Example
-Here is an example of how to use these commands in your Tiptap editor setup:
+- `withContent` (boolean)：
+- 如果为 true，将会复制行的内容。如果为 false，只复制结构，不复制内容。默认值为 true。
+
+## 示例
+
+以下是在 Tiptap 编辑器中使用这些命令的示例：
+
 ```js
 import { Editor } from '@tiptap/core';
 import Table from '@tiptap/extension-table';
@@ -59,13 +67,13 @@ const editor = new Editor({
   content: '<p>Hello World!</p>',
 });
 
-// Duplicate the current column with content
+// 复制当前列及其内容
 editor.commands.duplicateColumn(true);
 
-// Duplicate the current row without content
+// 复制当前行但不复制内容
 editor.commands.duplicateRow(false);
 ```
 
-# License
-This package is open-sourced software licensed under the MIT license.
+## 许可证
 
+本包采用 MIT 许可证开源。
