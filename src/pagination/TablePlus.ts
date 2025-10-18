@@ -87,6 +87,7 @@ export const TablePlus = Table.extend<TablePlusOptions>({
                 // Check for is going to remove
                 let _from = step.from - (position - currentPosition);
                 let _to = step.to - (position - currentPosition);
+                if(oldState.doc.content.size < _from || oldState.doc.content.size < _to || (_from < 0 || _to < 0)) return false;
 
                 let _table = findParentNodeOfType(
                   oldState,

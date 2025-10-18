@@ -30,6 +30,7 @@ export class TablePlusNodeView {
     this.cellPercentage = [];
     this.handles = [];
     this.slider = document.createElement("div");
+    this.slider.contentEditable = "false";
     this.slider.style.width = "100%";
     this.slider.style.position = "relative";
     this.dom.appendChild(this.slider);
